@@ -66,10 +66,6 @@ def sub_two_numbers(
     }
 
 
-#
-#
-
-
 @app.get("/users/me/", response_model=UserOut)
 def get_me(user: User = Depends(get_user_by_token)):
     return user
