@@ -2,9 +2,11 @@
 # cd homework_03
 # docker build --progress=plain . -t blog-app
 # cd blog
-# docker run --expose=8000 -p 8000:8000 blog-app
+# docker run -p 8000:8000 blog-app
 
 FROM python:3.9-buster
+
+EXPOSE 8000
 
 WORKDIR /var/app
 
