@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Index page!
+{% endblock %}
+
+
+{% block body %}
+    <div>
+        <a>
+            Index Russia!
+        </a>
+    </div>
+
+    </div>
+    <div>
+        <a href="{{ url_for("others_app.other_about") }}">
+            Back to about page
+        </a>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    Index footer!
+{% endblock %}

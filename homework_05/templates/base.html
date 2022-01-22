@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css')}}">
+    <title>
+        <h1>Base Header</h1>
+        </title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('others_app.other_index') }}" style="font-size:50px;">
+            Nav main page</a>
+    </nav>
+{% block title %}
+    Base Title!
+{% endblock %}
+
+{% block body %}
+    Base body!
+{% endblock %}
+
+</body>
+{% block footer %}
+    Base Footer!
+{% endblock %}
+</html>

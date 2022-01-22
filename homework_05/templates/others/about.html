@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    About Us!
+{% endblock %}
+
+{% block body %}
+    <div>
+        <a>
+            Some info about us!
+            We are boring and sucks at football!
+        </a>
+    </div>
+        <div>
+        <a href="{{ url_for("others_app.other_index") }}">
+            Back to index page
+        </a>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    About footer!
+{% endblock %}
