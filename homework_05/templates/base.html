@@ -47,7 +47,9 @@
 {% block footer %}
     <div class="p-3 mb-2 bg-secondary text-white">
         We are compony for improve our developer skills.
-        2022 ©
+        <script>
+            document.write(/\d{4}/.exec(Date())[0])
+        </script> ©
     </div>
 {% endblock %}
 </html>
