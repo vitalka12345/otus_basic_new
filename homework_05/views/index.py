@@ -1,14 +1,14 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from werkzeug.exceptions import BadRequest, NotFound
 
-others_app = Blueprint("others_app", __name__)
+index_app = Blueprint("index_app", __name__)
 
 
-@others_app.route("/")
-def other_index():
+@index_app.route("/")
+def index():
     return render_template("others/index.html")
 
 
-@others_app.route("/about/")
-def other_about():
+@index_app.route("/about/")
+def about():
     return render_template("others/about.html")

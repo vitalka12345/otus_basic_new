@@ -1,10 +1,10 @@
 from flask import Flask
 from werkzeug.exceptions import InternalServerError
 
-from views.others import others_app
+from views.index import index_app
 
 app = Flask(__name__)
-app.register_blueprint(others_app)
+app.register_blueprint(index_app)
 
 
 @app.errorhandler(KeyError)

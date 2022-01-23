@@ -1,25 +1,19 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Index page!
+    <div class="p-3 mb-2 bg-secondary text-white">
+        This is my main page of this awesome project!
+    </div>
 {% endblock %}
-
 
 {% block body %}
-    <div>
+    <div class="container-md">
+          <h3>Hot News №1</h3>
         <a>
-            Index Russia!
+            Since that axis was formed, Arsenal have not conceded a goal before the 38th minute in 18 fixtures.
+            It's providing Mikel Arteta with a fantastic platform to work from and results are going their way.
+            The home defeat to Man City was their first loss in 12 home games in all competitions and Arteta's
+            boys certainly deserved more than they got.
         </a>
     </div>
-
-    </div>
-    <div>
-        <a href="{{ url_for("others_app.other_about") }}">
-            Back to about page
-        </a>
-    </div>
-{% endblock %}
-
-{% block footer %}
-    Index footer!
 {% endblock %}
