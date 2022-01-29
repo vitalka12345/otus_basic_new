@@ -9,8 +9,6 @@ EXPOSE 5000
 
 WORKDIR /var/app/
 
-RUN #pip3 install virtualenv; python3 -m venv ./;
-
 COPY requirements.txt ./
 
 RUN pip3 install -r requirements.txt
