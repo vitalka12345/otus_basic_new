@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Posts list
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <ul>
+        {% for post in posts %}
+            <div>
+            <li>
+                Id {{ post.id }}
+                <br>
+                User_id {{ post.userid }}
+                <br>
+                Title {{ post.title }}
+                <br>
+                Body {{ post.body }}
+                <br>
+            </li>
+            </div>
+        {% endfor %}
+    </ul>
+</div>
+<div>
+    <a href="{{ url_for("posts_app.add") }}">
+        Add new post
+    </a>
+</div>
+{% endblock %}

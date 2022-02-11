@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  posts:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      CONFIG: DevelopmentConfig
+      SQLALCHEMY_DATABASE_URI: postgresql://user:password@pg:5432/my_db
+    volumes:
+      - ./:/app/posts
+    ports:
+    - 5000:5000
+    expose:
+      - 5000/tcp
+    depends_on:
+      - pg
+
+  posts-prod:
+    build:
+      context: .
+      dockerfile: ./docker-build/posts-prod/Dockerfile
+    ports:
+      - 5080:80
+    environment:
+      CONFIG: ProductionConfig
+      SQLALCHEMY_DATABASE_URI: postgresql://user:password@pg:5432/my_db
+    depends_on:
+      - pg
+    expose:
+      - 5080/tcp
+
+  pg:
+    image: postgres # use latest official postgres version
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: my_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    expose:
+      - 5432/tcp
+    volumes:
+      - pg-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+
+
+volumes:
+  pg-data:
